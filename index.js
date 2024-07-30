@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 // const Product = require("./models/product.model.js");
 const productRoute = require("./routes/product.route.js");
+const userRoute = require("./routes/user.route.js");
 const app = express();
 
 //middleware
@@ -10,6 +11,9 @@ app.use(express.urlencoded({ extended: false }));
 
 //routes
 app.use("/api/products", productRoute);
+
+//routes
+app.use("/api/users", userRoute);
 
 //hello message
 app.get("/", (req, res) => {
